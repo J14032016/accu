@@ -1,0 +1,76 @@
+site_name: Mohanson
+site_description: Mohanson, 数字图像处理, 深度学习, Python, Go
+site_url: http://accu.cc
+site_author: Mohanson
+theme: readthedocs
+repo_url: https://github.com/mohanson/accu
+dev_addr: 0.0.0.0:80
+markdown_extensions:
+        - asciimathml
+extra_css:
+        - css/accu.css
+extra_javascript:
+        - js/accu.js
+pages:
+- 主页: index.md
+- 数字图像处理:
+        - 数字图像处理-通道: content/pil/channel.md
+        - 数字图像处理-均值: content/pil/mean.md
+        - 数字图像处理-对比增强: content/pil/contrast.md
+        - 数字图像处理-对比拉伸: content/pil/contrast_tensile.md
+        - 数字图像处理-位图切割: content/pil/bit.md
+        - 数字图像处理-直方图均衡化: content/pil/histogram_equalization.md
+        - 数字图像处理-图像减法: content/pil/sub.md
+        - 数字图像处理-加性高斯白噪声与去噪: content/pil/agwn.md
+        - 数字图像处理-空间滤波基础: content/pil/spatial_filter.md
+        - 数字图像处理-空间滤波-均值滤波: content/pil/spatial_filter_mean.md
+        - 数字图像处理-空间滤波-中值滤波: content/pil/spatial_filter_medium.md
+        - 数字图像处理-空间滤波-锐化滤波: content/pil/spatial_filter_sharpening.md
+        - 数字图像处理-空间滤波-高斯滤波: content/pil/spatial_filter_gaussian_blur.md
+        - 数字图像处理-频域滤波基础: content/pil/frequency_filter.md
+        - 数字图像处理-频域滤波-低通滤波: content/pil/frequency_filter_lpf.md
+        - 数字图像处理-频域滤波-高通滤波: content/pil/frequency_filter_hpf.md
+        - 数字图像处理-频域滤波-带阻和带通滤波: content/pil/frequency_filter_br_bp.md
+        - 数字图像处理-噪声: content/pil/noise.md
+        - 数字图像处理-安全色: content/pil/safe_color.md
+        - 数字图像处理-补色和反色: content/pil/complementary_and_invert_color.md
+        - 数字图像处理-水印: content/pil/watermark.md
+        - 数字图像处理-缩放-最近邻插值法: content/pil/resize_nearst.md
+        - 数字图像处理-缩放-最近邻插值法的幽灵事件: content/pil/resize_nearst_ghost.md
+        - 数字图像处理-缩放-双线性算法: content/pil/resize_bilinear.md
+        - 数字图像处理-缩放-盒取样法: content/pil/resize_box.md
+        - 数字图像处理-缩放-双三次插值法: content/pil/resize_bicubic.md
+        - 数字图像处理-缩放-Lanczos算法: content/pil/resize_lanczos.md
+        - 数字图像处理-字符画: content/pil/ascii.md
+        - PIL-概览: content/pil/pil_tutorial_overview.md
+        - PIL-Image: content/pil/pil_image.md
+        - PIL-ImageChops: content/pil/pil_imagechops.md
+        - PIL-ImageColor: content/pil/pil_imagecolor.md
+        - PIL-ImageDraw: content/pil/pil_imagedraw.md
+        - PIL-ImageEnhance: content/pil/pil_imageenhance.md
+        - PIL-ImageOps: content/pil/pil_imageops.md
+- Python:
+        - Python-matplotlib-折线图: content/plt_line.md
+        - Python-matplotlib-柱状图: content/plt_bar.md
+        - Python-matplotlib-饼图: content/plt_pie.md
+        - Python-f-string: content/py_f_string.md
+        - Python-打包并发布代码至 PyPI: content/py_setup.md
+- Go:
+        - Go-socket: content/go_socket.md
+        - Go-tls: content/go_tls.md
+        - Go-socks-version-5: content/go_socks5.md
+- 沙箱:
+        - 数学-方差与标准差: content/math_variance_and_sd.md
+        - 数学-正态分布: content/math_normal_distribution.md
+        - 数学-凯利公式: content/math_kelly_formula.md
+        - 数学-霍夫曼编码: content/math_huffman.md
+        - 数学-rc4 加密算法: content/math_rc4.md
+        - Linux-常用软件安装与配置: content/os_install.md
+        - Linux-ssr: content/os_ssr.md
+        - 机器学习-图像风格转移: content/ml_neural_style_transfer.md
+        - 机器学习-fastText文本分类: content/ml_fasttext.md
+        - 机器学习-dlib简明教程: content/ml_dlib.md
+        - TCP/IP-概述: content/net_tcpip_summary.md
+        - RFC1928-socks5-中文翻译: content/net_rfc1928_socks5.md
+        - AndrewNg-deeplearning-week1: content/dp_week1.md
+        - AndrewNg-deeplearning-week2: content/dp_week2.md

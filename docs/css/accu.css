@@ -1,0 +1,13 @@
+mtd {
+    text-align: left;
+    padding-left: 0.2em
+}
+
+.wy-menu {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+}
+
+.section p, .section ul {
+    letter-spacing: .15px;
+    line-height: 1.8 !important;
+}
