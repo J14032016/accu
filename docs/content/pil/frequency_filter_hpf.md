@@ -36,7 +36,7 @@ def convert_2d(r):
     r_ext_fu = np.fft.fft2(r_ext)
     r_ext_fu = np.fft.fftshift(r_ext_fu)
 
-   # 截止频率为 20
+    # 截止频率为 20
     d0 = 20
     # 2 阶巴特沃斯
     n = 2
