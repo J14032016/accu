@@ -1,8 +1,9 @@
-# 基础
+# 系统更新
 
 ```sh
 yum -y update
 yum -y install epel-release
+yum -y install gcc readline-devel sqlite-devel openssl-devel zlib-devel
 
 # 中文乱码
 # 修改 /etc/locale.conf
@@ -15,13 +16,8 @@ stty erase ^h
 # 安装 python
 
 ```sh
-# 安装一些基础库
-yum -y install readline-devel sqlite-devel openssl-devel zlib-devel
-```
-
-```sh
-# 3.6.2 版本
-version=3.6.2
+# 3.6.3 版本
+version=3.6.3
 
 wget https://www.python.org/ftp/python/${version}/Python-${version}.tgz
 tar -zxvf Python-${version}.tgz
@@ -52,7 +48,9 @@ wget https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz
 tar -zxvf go${version}.linux-amd64.tar.gz
 mv go /usr/local/go
 mkdir /usr/local/gopath
+```
 
+```sh
 # 修改 ~/.bash_profire
 export GOROOT=/usr/local/go
 export GOPATH=/usr/local/gopath
@@ -65,7 +63,8 @@ export PATH=$PATH:$GOPATH/bin
 ```sh
 yum -y install screen
 
-echo 'shell -$SHELL' >  ~/.screenrc
+# 创建 ~/.screenrc
+shell -$SHELL
 
 # 修改 ~/.bashrc
 alias sr='screen -r'
@@ -118,3 +117,16 @@ stdout_logfile = /data/logs/httpserver.log
 ```
 
 新增或修改配置文件后, 使用 `supervisor update` 更新.
+
+# 密钥登录
+
+将本机的 id\_rsa.pub 内容复制到 ~/.ssh/authorized\_keys 内.
+
+```sh
+# 修改 /etc/ssh/sshd_config
+PubkeyAuthentication yes
+PasswordAuthentication no
+
+# 重启 sshd
+systemctl restart sshd
+```
