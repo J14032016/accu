@@ -41,6 +41,7 @@ pages:
         - 数字图像处理-缩放-盒取样法: content/pil/resize_box.md
         - 数字图像处理-缩放-双三次插值法: content/pil/resize_bicubic.md
         - 数字图像处理-缩放-Lanczos算法: content/pil/resize_lanczos.md
+        - 数字图像处理-区域生长算法: content/pil/rga.md
         - 数字图像处理-字符画: content/pil/ascii.md
         - PIL-概览: content/pil/pil_tutorial_overview.md
         - PIL-Image: content/pil/pil_image.md
