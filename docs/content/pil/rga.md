@@ -13,25 +13,27 @@
 # 代码实现-Python
 
 ```py
-import PIL.Image
 import numpy as np
+import PIL.Image
 
-im = PIL.Image.open('github-mark.png')
+im = PIL.Image.open('/tmp/github-mark.png')
 im = im.convert('L')
 im = np.array(im)
 
 seed = (40, 300)
-mask = np.zeros(im.shape)
+mask = np.zeros(im.shape[:2], dtype=np.uint8)
 mask[seed] = 1
 vect = [seed]
+area = [im[seed]]
 
 while vect:
     n = len(vect)
+    mean = np.sum(np.array(area), axis=0) / len(area)
     for i in range(n):
         seed = vect[i]
         s0 = seed[0]
         s1 = seed[1]
-        area = [
+        for p in [
             (s0 - 1, s1 - 1),
             (s0 - 1, s1),
             (s0 - 1, s1 + 1),
@@ -40,21 +42,22 @@ while vect:
             (s0 + 1, s1 - 1),
             (s0 + 1, s1),
             (s0 + 1, s1 + 1)
-        ]
-        for p in area:
+        ]:
             if p[0] < 0 or p[0] >= im.shape[0] or p[1] < 0 or p[1] >= im.shape[1]:
                 continue
             if mask[p] == 1:
                 continue
-            # 区域生长条件: 灰度值相差小于 5
-            if max(im[p], im[seed]) - min(im[p], im[seed]) <= 5:
+            # 区域生长条件: 灰度值差值小于等于 5
+            if abs(mean - im[p]) <= 5:
                 mask[p] = 1
                 vect.append(p)
+                area.append(im[p])
     vect = vect[n:]
 
 
 mask = (1 - mask) * 255
-PIL.Image.fromarray(mask).show()
+im = PIL.Image.fromarray(mask)
+im.show()
 ```
 
 原图:
