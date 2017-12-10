@@ -70,6 +70,8 @@ B: 00011100|11  -------->  B': 00011100|00
 6. 设计遗传算子
 7. 设定遗传算子运行参数
 
+Python 实现:
+
 ```py
 import matplotlib.animation
 import matplotlib.pyplot as plt

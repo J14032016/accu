@@ -51,7 +51,8 @@ pages:
         - PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - PIL-ImageOps: content/pil/pil_imageops.md
 - Math:
-        - Math-遗传算法: content/math/ga.md
+        - Math-遗传算法(一): content/math/ga_1.md
+        - Math-遗传算法(二): content/math/ga_2.md
         - Math-RC4: content/math/rc4.md
         - Math-霍夫曼编码: content/math/huffman.md
         - Math-方差与标准差: content/math/variance_and_sd.md
