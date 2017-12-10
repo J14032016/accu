@@ -1,4 +1,4 @@
-# 凯利公式<small>[wiki](https://en.wikipedia.org/wiki/Kelly_criterion)</small>
+# 凯利公式
 
 
 在概率论中, 凯利公式(Kelly criterion), 也称凯利方程式, 是一个用以使特定赌局中, 拥有正期望值之重复行为长期增长率最大化的公式, 由约翰·拉里·凯利于1956年在<贝尔系统技术期刊>中发表, 可用以计算出每次游戏中应投注的资金比例. **除可将长期增长率最大化外, 此方程式不允许在任何赌局中, 有失去全部现有资金的可能, 因此有不存在破产疑虑的优点**. 方程式假设货币与赌局可无穷分割, 而只要资金足够多, 在实际应用上不成问题.
@@ -21,3 +21,7 @@ $$
 # 证明
 
 见维基百科.
+
+# 参考
+
+- [https://en.wikipedia.org/wiki/Kelly_criterion](https://en.wikipedia.org/wiki/Kelly_criterion)

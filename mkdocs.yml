@@ -50,6 +50,13 @@ pages:
         - PIL-ImageDraw: content/pil/pil_imagedraw.md
         - PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - PIL-ImageOps: content/pil/pil_imageops.md
+- Math:
+        - Math-遗传算法: content/math/ga.md
+        - Math-RC4: content/math/rc4.md
+        - Math-霍夫曼编码: content/math/huffman.md
+        - Math-方差与标准差: content/math/variance_and_sd.md
+        - Math-正态分布: content/math/normal_distribution.md
+        - Math-凯利公式: content/math/kelly_formula.md
 - Python:
         - Python-matplotlib-折线图: content/plt_line.md
         - Python-matplotlib-柱状图: content/plt_bar.md
@@ -61,11 +68,6 @@ pages:
         - Go-tls: content/go_tls.md
         - Go-socks-version-5: content/go_socks5.md
 - 沙箱:
-        - 数学-方差与标准差: content/math_variance_and_sd.md
-        - 数学-正态分布: content/math_normal_distribution.md
-        - 数学-凯利公式: content/math_kelly_formula.md
-        - 数学-霍夫曼编码: content/math_huffman.md
-        - 数学-rc4 加密算法: content/math_rc4.md
         - Linux-常用软件安装与配置: content/os_install.md
         - Linux-ssr: content/os_ssr.md
         - 机器学习-图像风格转移: content/ml_neural_style_transfer.md
