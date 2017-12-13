@@ -150,4 +150,4 @@ ani = matplotlib.animation.FuncAnimation(fig, update, interval=200, repeat=False
 plt.show()
 ```
 
-![img](/img/math/ga/calc_max.gif)
+![img](/img/math/ga_1/calc_max.gif)
