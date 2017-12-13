@@ -25,10 +25,10 @@ cmake --build . --config Release
 简而言之, 前往 [http://www.boost.org/](http://www.boost.org/) 下载 boost 后, 使用如下命令安装即可, 注意 `--with-python` 配置 python 可执行文件, 安装脚本会自动寻找 python 的安装目录.
 
 ```sh
-# 默认情况下不需要设置环境变量
+# CPLUS_INCLUDE_PATH 值为 pyconfig.h 所在路径
 export CPLUS_INCLUDE_PATH=/usr/local/python/include/python3.6m
 
-./bootstrap.sh --prefix=/usr/local/boost/prefix --with-python=python3 --with-libraries=python
+./bootstrap.sh --prefix=/usr/local/boost --with-python=python3 --with-libraries=python
 ./b2
 ./b2 install
 ```
