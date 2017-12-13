@@ -8,14 +8,6 @@ cd dlib
 mkdir build; cd build; cmake .. ; cmake --build .
 # 安装 python API
 python setup.py install
-
-# 执行测试
-cd dlib/test
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release
-./dtest --runall
 ```
 
 详细请至 [https://github.com/davisking/dlib](https://github.com/davisking/dlib) 阅读官方文档.
