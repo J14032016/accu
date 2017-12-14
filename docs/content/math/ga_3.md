@@ -75,15 +75,11 @@ class GA:
     def get_per_fit(self, per):
         im = self.decode(per)
         assert im.shape == self.control_im.shape
-        s = 0
-        for i in range(im.shape[0]):
-            for j in range(im.shape[1]):
-                a = self.control_im[i][j]
-                b = im[i][j]
-                sub = np.where(a > b, a - b, b - a).astype(np.float64)
-                d = np.sqrt(np.sum(sub ** 2))
-                s += d
-        return 441.673 * self.control_im.size - s
+        # 三维矩阵的欧式距离
+        d = np.linalg.norm(np.where(self.control_im > im, self.control_im - im, im - self.control_im))
+        # 使用一个较大的数减去欧式距离
+        # 此处该数为 (self.control_im.size * ((3 * 255 ** 2) ** 0.5) ** 2) ** 0.5
+        return (self.control_im.size * 195075) ** 0.5 - d
 
     def get_pop_fit(self, pop):
         fit = np.zeros(self.pop_size)
@@ -161,8 +157,8 @@ for i, (pop, fit) in enumerate(ga.evolve()):
     j = np.argmax(fit)
     per = pop[j]
     per_fit = ga.get_per_fit(per)
-    print(f'{i:>5} {per_fit}')
-    skimage.io.imsave(os.path.join(save_dir, f'{i}.jpg'), ga.decode(per))
+    print(f'{i:0>4} {per_fit}')
+    skimage.io.imsave(os.path.join(save_dir, f'{i:0>4}.jpg'), ga.decode(per))
 ```
 
 执行上述代码, 记得修改 `control_im_path` 与 `save_dir` 为可用地址. 不用一会, 就能在 `save_dir` 中见到每一代最优个体了. 当然, 跑完 3000 代还是需要一点时间的(大约半天~).
