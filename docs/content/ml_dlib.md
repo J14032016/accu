@@ -17,20 +17,17 @@ python setup.py install
 简而言之, 前往 [http://www.boost.org/](http://www.boost.org/) 下载 boost 后, 使用如下命令安装即可, 注意 `--with-python` 配置 python 可执行文件, 安装脚本会自动寻找 python 的安装目录.
 
 ```sh
-# CPLUS_INCLUDE_PATH 值为 pyconfig.h 所在路径
-export CPLUS_INCLUDE_PATH=/usr/local/python/include/python3.6m
-
 ./bootstrap.sh --prefix=/usr/local/boost --with-python=python3 --with-libraries=python
-./b2
+# CPLUS_INCLUDE_PATH 值为 pyconfig.h 所在路径
+CPLUS_INCLUDE_PATH=/usr/local/python/include/python3.6m ./b2
 ./b2 install
 ```
 
 安装完毕后在 ~/.bash_profile 中设置环境变量
 
 ```sh
-export BOOST_INCLUDE=/usr/local/boost/include
-export BOOST_LIB=/usr/local/boost/lib
-export PATH=$PATH:$BOOST_INCLUDE:$BOOST_LIB
+export PATH=$PATH:/usr/local/boost/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/boost/lib
 ```
 
 **记录二: 内存过小导致编译失败**
