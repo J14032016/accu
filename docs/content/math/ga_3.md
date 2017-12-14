@@ -112,7 +112,6 @@ class GA:
     def evolve(self):
         pop = self.gen_pop()
         fit = self.get_pop_fit(pop)
-
         opt_per = pop[np.argmax(fit)].copy()
         opt_fit = np.max(fit)
 
@@ -137,7 +136,6 @@ class GA:
                         base.alpha = np.random.random() * 0.45
 
             fit = self.get_pop_fit(pop)
-
             cur_opt_per = pop[np.argmax(fit)].copy()
             cur_opt_fit = np.max(fit)
 
