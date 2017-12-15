@@ -92,40 +92,58 @@ class GA:
     def f(self, x):
         return np.sin(10 * x) * x + np.cos(2 * x) * x
 
-    def encode(self, per):
-        a = per / (self.x_bound[1] - self.x_bound[0]) * (2 ** self.dna_size - 1)
+    def encode(self, x):
+        a = x / (self.x_bound[1] - self.x_bound[0]) * (2 ** self.dna_size - 1)
         a = int(a)
         return np.array(list(np.binary_repr(a).zfill(self.dna_size))).astype(np.uint8)
 
-    def decode(self, dna):
-        return dna.dot(1 << np.arange(self.dna_size)[::-1]) / (2**self.dna_size - 1) * self.x_bound[1]
+    def decode(self, per):
+        return per.dot(1 << np.arange(self.dna_size)[::-1]) / (2**self.dna_size - 1) * self.x_bound[1]
+
+    def perfit(self, per):
+        x = self.decode(per)
+        return self.f(x)
 
     def getfit(self, pop):
         x = self.decode(pop)
         r = self.f(x)
-        return r + 0.001 - np.min(r)
+        return r
+
+    def select(self, pop, fit):
+        fit = fit - np.min(fit)
+        fit = fit + np.max(fit) / 2 + 0.001
+        idx = np.random.choice(np.arange(self.pop_size), size=self.pop_size, replace=True, p=fit / fit.sum())
+        pop = pop[idx]
+        return pop
+
+    def crosso(self, pop):
+        for i in range(0, self.pop_size, 2):
+            if np.random.random() < self.pc:
+                a = pop[i]
+                b = pop[i + 1]
+                p = np.random.randint(1, self.dna_size)
+                a[p:], b[p:] = b[p:], a[p:]
+                pop[i] = a
+                pop[i + 1] = b
+        return pop
+
+    def mutate(self, pop):
+        mut = np.random.choice(np.array([0, 1]), pop.shape, p=[1 - self.pm, self.pm])
+        pop = np.where(mut == 1, 1 - pop, pop)
+        return pop
 
     def evolve(self):
         pop = np.random.randint(2, size=(self.pop_size, self.dna_size))
-        yield pop
-
+        pop_fit = self.getfit(pop)
+        yield pop, pop_fit
         for _ in range(self.max_iter - 1):
-            fit = self.getfit(pop)
-            idx = np.random.choice(np.arange(self.pop_size), size=self.pop_size, replace=True, p=fit / fit.sum())
-            pop = pop[idx]
-
-            for i in range(0, self.pop_size, 2):
-                if np.random.random() < self.pc:
-                    a = pop[i]
-                    b = pop[i + 1]
-                    p = np.random.randint(1, self.dna_size)
-                    a[p:], b[p:] = b[p:], a[p:]
-                    pop[i] = a
-                    pop[i + 1] = b
-
-            mut = np.random.choice(np.array([0, 1]), pop.shape, p=[1 - self.pm, self.pm])
-            pop = np.where(mut == 1, 1 - pop, pop)
-            yield pop
+            chd = self.select(pop, pop_fit)
+            chd = self.crosso(chd)
+            chd = self.mutate(chd)
+            chd_fit = self.getfit(chd)
+            yield chd, chd_fit
+            pop = chd
+            pop_fit = chd_fit
 
 
 ga = GA()
@@ -140,7 +158,7 @@ sca = ax.scatter([], [], s=200, c='#CF6FC1', alpha=0.5)
 
 
 def update(*args):
-    pop = next(gaiter)
+    pop, _ = next(gaiter)
     fx = ga.decode(pop)
     fv = ga.f(fx)
     sca.set_offsets(np.dstack((fx, fv)))
