@@ -17,21 +17,21 @@
 - 选择算子: 轮盘选择 + 最优保留策略
 - 交叉算子: 单点交叉
 - 变异算子: 等位变异
-- 运行参数: 迭代 3000 次, 种群大小 80, 交叉概率 0.6, 变异概率 0.008
+- 运行参数: 迭代 12000 次, 种群大小 80, 交叉概率 0.6, 变异概率 0.008
 
 # 代码实现
 
 下面用 Python 实现上述故事.
 
 ```py
+import copy
 import os
 import os.path
-import copy
 
 import numpy as np
+import skimage.draw
 import skimage.io
 import skimage.transform
-import skimage.draw
 
 control_im_path = 'firefox.jpg'
 save_dir = '/tmp/img'
@@ -57,7 +57,7 @@ class GA:
     def __init__(self):
         self.pop_size = 80
         self.dna_size = 100
-        self.max_iter = 3000
+        self.max_iter = 12000
         self.pc = 0.6
         self.pm = 0.008
 
@@ -72,7 +72,7 @@ class GA:
             skimage.draw.set_color(im, (rr, cc), e.color, e.alpha)
         return im
 
-    def get_per_fit(self, per):
+    def perfit(self, per):
         im = self.decode(per)
         assert im.shape == self.control_im.shape
         # 三维矩阵的欧式距离
@@ -81,13 +81,13 @@ class GA:
         # 此处该数为 (self.control_im.size * ((3 * 255 ** 2) ** 0.5) ** 2) ** 0.5
         return (self.control_im.size * 195075) ** 0.5 - d
 
-    def get_pop_fit(self, pop):
+    def getfit(self, pop):
         fit = np.zeros(self.pop_size)
         for i, per in enumerate(pop):
-            fit[i] = self.get_per_fit(per)
+            fit[i] = self.perfit(per)
         return fit
 
-    def gen_pop(self):
+    def genpop(self):
         pop = []
         for _ in range(self.pop_size):
             per = Gene()
@@ -109,54 +109,63 @@ class GA:
             son.append(pop[i].copy())
         return son
 
+    def optret(self, f):
+        def mt(*args, **kwargs):
+            opt = None
+            opf = None
+            for pop, fit in f(*args, **kwargs):
+                max_idx = np.argmax(fit)
+                min_idx = np.argmax(fit)
+                if opf is None or fit[max_idx] >= opf:
+                    opt = pop[max_idx]
+                    opf = fit[max_idx]
+                else:
+                    pop[min_idx] = opt
+                    fit[min_idx] = opf
+                yield pop, fit
+        return mt
+
+    def crosso(self, pop):
+        for i in range(0, self.pop_size, 2):
+            if np.random.random() < self.pc:
+                a = pop[i]
+                b = pop[i + 1]
+                p = np.random.randint(1, self.dna_size)
+                a.base[p:], b.base[p:] = b.base[p:], a.base[p:]
+                pop[i] = a
+                pop[i + 1] = b
+        return pop
+
+    def mutate(self, pop):
+        for per in pop:
+            for base in per.base:
+                if np.random.random() < self.pm:
+                    base.r = np.random.randint(0, self.control_im.shape[0], 3, dtype=np.uint8)
+                    base.c = np.random.randint(0, self.control_im.shape[1], 3, dtype=np.uint8)
+                    base.color = np.random.randint(0, 256, 3)
+                    base.alpha = np.random.random() * 0.45
+        return pop
+
     def evolve(self):
-        pop = self.gen_pop()
-        fit = self.get_pop_fit(pop)
-        opt_per = pop[np.argmax(fit)].copy()
-        opt_fit = np.max(fit)
-
+        pop = self.genpop()
+        pop_fit = self.getfit(pop)
         for _ in range(self.max_iter):
-            pop = self.select(pop, fit)
-
-            for i in range(0, self.pop_size, 2):
-                if np.random.random() < self.pc:
-                    a = pop[i]
-                    b = pop[i + 1]
-                    p = np.random.randint(1, self.dna_size)
-                    a.base[p:], b.base[p:] = b.base[p:], a.base[p:]
-                    pop[i] = a
-                    pop[i + 1] = b
-
-            for per in pop:
-                for base in per.base:
-                    if np.random.random() < self.pm:
-                        base.r = np.random.randint(0, self.control_im.shape[0], 3, dtype=np.uint8)
-                        base.c = np.random.randint(0, self.control_im.shape[1], 3, dtype=np.uint8)
-                        base.color = np.random.randint(0, 256, 3)
-                        base.alpha = np.random.random() * 0.45
-
-            fit = self.get_pop_fit(pop)
-            cur_opt_per = pop[np.argmax(fit)].copy()
-            cur_opt_fit = np.max(fit)
-
-            if opt_fit > cur_opt_fit:
-                i = np.argmin(fit)
-                pop[i] = opt_per
-                fit[i] = opt_fit
-            else:
-                opt_per = cur_opt_per
-                opt_fit = cur_opt_fit
-
-            yield pop, fit
+            chd = self.select(pop, pop_fit)
+            chd = self.crosso(chd)
+            chd = self.mutate(chd)
+            chd_fit = self.getfit(chd)
+            yield chd, chd_fit
+            pop = chd
+            pop_fit = chd_fit
 
 
 ga = GA()
-for i, (pop, fit) in enumerate(ga.evolve()):
+for i, (pop, fit) in enumerate(ga.optret(ga.evolve)()):
     j = np.argmax(fit)
     per = pop[j]
-    per_fit = ga.get_per_fit(per)
-    print(f'{i:0>4} {per_fit}')
-    skimage.io.imsave(os.path.join(save_dir, f'{i:0>4}.jpg'), ga.decode(per))
+    per_fit = ga.perfit(per)
+    print(f'{i:0>5} {per_fit}')
+    skimage.io.imsave(os.path.join(save_dir, f'{i:0>5}.jpg'), ga.decode(per))
 ```
 
 执行上述代码, 记得修改 `control_im_path` 与 `save_dir` 为可用地址. 不用一会, 就能在 `save_dir` 中见到每一代最优个体了. 当然, 跑完 3000 代还是需要一点时间的(大约半天~).
