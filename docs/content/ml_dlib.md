@@ -58,23 +58,28 @@ dlib 自带人脸检测模块, 其 python 脚本位于 `/python_examples/face_de
 
 ```py
 import sys
-import cv2
+
 import dlib
+import skimage.draw
+import skimage.io
 
 load_name = sys.argv[1]
 save_name = sys.argv[2]
 
 detector = dlib.get_frontal_face_detector()
 
-img = cv2.imread(load_name)
+img = skimage.io.imread(load_name)
 dets = detector(img, 1)
-print("Number of faces detected: {}".format(len(dets)))
-for i, d in enumerate(dets):
-    print("Detection {}: Left: {} Top: {} Right: {} Bottom: {}".format(
-        i, d.left(), d.top(), d.right(), d.bottom()))
-    cv2.rectangle(img, (d.left(), d.top()), (d.right(), d.bottom()), (255, 0, 255), 1)
+print('Number of faces detected: {}'.format(len(dets)))
+for d in dets:
+    r0, c0, r1, c1 = d.top(), d.left(), d.bottom(), d.right()
+    print('Detection {}'.format([(r0, c0), (r1, c1)]))
+    skimage.draw.set_color(img, skimage.draw.line(r0, c0, r0, c1), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r0, c1, r1, c1), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r1, c1, r1, c0), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r1, c0, r0, c0), (255, 0, 0))
 
-cv2.imwrite(save_name, img)
+skimage.io.imsave(save_name, img)
 ```
 
 ```sh
@@ -98,38 +103,34 @@ dlib 自带人脸标注模块, 其 python 脚本位于 `/python_examples/face_la
 ```py
 import sys
 
-import cv2
 import dlib
-import numpy as np
+import skimage.draw
+import skimage.io
 
 predictor_path = sys.argv[1]
 load_name = sys.argv[2]
 save_name = sys.argv[3]
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(predictor_path)
+shape_predictor = dlib.shape_predictor(predictor_path)
 
-img = cv2.imread(load_name)
+img = skimage.io.imread(load_name)
 dets = detector(img, 1)
-print("Number of faces detected: {}".format(len(dets)))
+print('Number of faces detected: {}'.format(len(dets)))
 for i, d in enumerate(dets):
-    print("Detection {}: Left: {} Top: {} Right: {} Bottom: {}".format(
-        i, d.left(), d.top(), d.right(), d.bottom()))
-    cv2.rectangle(img, (d.left(), d.top()), (d.right(), d.bottom()), (255, 0, 255), 1)
-    shape = predictor(img, d)
-    print("Part 0: {}, Part 1: {} ...".format(shape.part(0), shape.part(1)))
-    shape = [(p.x, p.y) for p in predictor(img, d).parts()]
-    for i, pos in enumerate(shape):
-        # 可以打上每个点的索引
-        # cv2.putText(
-        #     img, str(i), pos,
-        #     fontFace=cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
-        #     fontScale=0.4,
-        #     color=(0, 0, 255)
-        # )
-        cv2.circle(img, pos, 2, color=(0, 255, 255))
+    r0, c0, r1, c1 = d.top(), d.left(), d.bottom(), d.right()
+    print(i, 'Detection {}'.format([(r0, c0), (r1, c1)]))
+    skimage.draw.set_color(img, skimage.draw.line(r0, c0, r0, c1), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r0, c1, r1, c1), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r1, c1, r1, c0), (255, 0, 0))
+    skimage.draw.set_color(img, skimage.draw.line(r1, c0, r0, c0), (255, 0, 0))
 
-cv2.imwrite(save_name, img)
+    shape = [(p.x, p.y) for p in shape_predictor(img, d).parts()]
+    print('Part 0: {}, Part 1: {} ...'.format(shape[0], shape[1]))
+    for i, pos in enumerate(shape):
+        skimage.draw.set_color(img, skimage.draw.circle(pos[1], pos[0], 2), (0, 255, 0))
+
+skimage.io.imsave(save_name, img)
 ```
 
 ```sh
