@@ -51,10 +51,15 @@ pages:
         - PIL-ImageDraw: content/pil/pil_imagedraw.md
         - PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - PIL-ImageOps: content/pil/pil_imageops.md
+- 机器学习:
+        - 遗传算法-简单遗传算法: content/ml/ga/sga.md
+        - 遗传算法-最优保留策略: content/ml/ga/sga_optret.md
+        - 遗传算法-生物进化模拟: content/ml/ga/evolve.md
+        - Dlib-安装: content/ml/dlib/install.md
+        - Dlib-人脸识别: content/ml/dlib/face_detect.md
+        - Dlib-人脸标注: content/ml/dlib/face_landmark.md
+        - Dlib-人脸识别: content/ml/dlib/face_recognition.md
 - Math:
-        - Math-遗传算法-简单遗传算法: content/math/ga_1.md
-        - Math-遗传算法-最优保留策略: content/math/ga_2.md
-        - Math-遗传算法-生物进化模拟: content/math/ga_3.md
         - Math-RC4: content/math/rc4.md
         - Math-霍夫曼编码: content/math/huffman.md
         - Math-方差与标准差: content/math/variance_and_sd.md
@@ -75,7 +80,6 @@ pages:
         - Linux-ssr: content/os_ssr.md
         - 机器学习-图像风格转移: content/ml_neural_style_transfer.md
         - 机器学习-fastText文本分类: content/ml_fasttext.md
-        - 机器学习-dlib简明教程: content/ml_dlib.md
         - TCP/IP-概述: content/net_tcpip_summary.md
         - RFC1928-socks5-中文翻译: content/net_rfc1928_socks5.md
         - AndrewNg-deeplearning-week1: content/dp_week1.md

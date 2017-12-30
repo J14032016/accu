@@ -128,4 +128,4 @@ ani = matplotlib.animation.FuncAnimation(fig, update, interval=200, repeat=False
 plt.show()
 ```
 
-![img](/img/math/ga_2/opt.gif)
+![img](/img/ml/ga/sga_optret/opt.gif)

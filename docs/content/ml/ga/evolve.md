@@ -6,7 +6,7 @@
 
 这种状况持续了好几十万代. 大家应该也猜到扇贝们身上发生什么事情了: 它们的贝壳上都印着很像 Firefox 图标的图案.
 
-![img](/img/math/ga_3/snapshot.png)
+![img](/img/ml/ga/evolve/snapshot.png)
 
 # 解析
 
