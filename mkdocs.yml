@@ -56,7 +56,7 @@ pages:
         - 遗传算法-最优保留策略: content/ml/ga/sga_optret.md
         - 遗传算法-生物进化模拟: content/ml/ga/evolve.md
         - Dlib-安装: content/ml/dlib/install.md
-        - Dlib-人脸识别: content/ml/dlib/face_detect.md
+        - Dlib-人脸检测: content/ml/dlib/face_detect.md
         - Dlib-人脸标注: content/ml/dlib/face_landmark.md
         - Dlib-人脸识别: content/ml/dlib/face_recognition.md
 - Math:
