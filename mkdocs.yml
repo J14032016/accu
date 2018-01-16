@@ -59,6 +59,7 @@ pages:
         - Dlib-人脸检测: content/ml/dlib/face_detect.md
         - Dlib-人脸标注: content/ml/dlib/face_landmark.md
         - Dlib-人脸识别: content/ml/dlib/face_recognition.md
+        - HOG: content/ml/hog.md
 - Math:
         - Math-RC4: content/math/rc4.md
         - Math-霍夫曼编码: content/math/huffman.md
