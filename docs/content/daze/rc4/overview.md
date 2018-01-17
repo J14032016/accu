@@ -1,4 +1,4 @@
-# RC4
+# 概览
 
 RC4 是对称流加密算法, 密文与明文长度均等. 密钥长度为 [1, 256]. 让它如此广泛分布和使用的主要因素是它*不可思议的简单和速度*.
 
@@ -36,7 +36,9 @@ endwhile
 
 此算法保证每256次循环中S盒的每个元素至少被交换过一次.
 
-# 代码实现-Python
+# 代码实现
+
+下示 python 代码主要翻译自 go 标准库 `crypto/rc4`.
 
 ```py
 class KeySizeError(Exception):
@@ -63,12 +65,12 @@ class Cipher:
     def __str__(self):
         return f'rc4.Cipher(key={self.key})'
 
-    def xor_key_stream_generic(self, src):
+    def crypto(self, src):
         dst = list(range(len(src)))
         i, j = self.i, self.j
         for k, v in enumerate(src):
             i = (i + 1) % 256
-            j = (j + self.s[i] % 256) % 256
+            j = (j + self.s[i]) % 256
             self.s[i], self.s[j] = self.s[j], self.s[i]
             dst[k] = v ^ self.s[(self.s[i] + self.s[j]) % 256] % 256
         self.i, self.j = i, j
@@ -78,7 +80,7 @@ class Cipher:
 if __name__ == '__main__':
     c = Cipher(b'secret')
     src = b'The quick brown fox jumps over the lazy dog'
-    dst = c.xor_key_stream_generic(src)
+    dst = c.crypto(src)
     print(dst)
 ```
 
