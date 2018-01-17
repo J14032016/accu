@@ -51,31 +51,24 @@ pages:
         - PIL-ImageDraw: content/pil/pil_imagedraw.md
         - PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - PIL-ImageOps: content/pil/pil_imageops.md
-- 机器学习:
-        - 遗传算法-简单遗传算法: content/ml/ga/sga.md
-        - 遗传算法-最优保留策略: content/ml/ga/sga_optret.md
-        - 遗传算法-生物进化模拟: content/ml/ga/evolve.md
-        - Dlib-安装: content/ml/dlib/install.md
-        - Dlib-人脸检测: content/ml/dlib/face_detect.md
-        - Dlib-人脸标注: content/ml/dlib/face_landmark.md
-        - Dlib-人脸识别: content/ml/dlib/face_recognition.md
-        - HOG: content/ml/hog.md
-- Math:
-        - Math-RC4: content/math/rc4.md
-        - Math-霍夫曼编码: content/math/huffman.md
-        - Math-方差与标准差: content/math/variance_and_sd.md
-        - Math-正态分布: content/math/normal_distribution.md
-        - Math-凯利公式: content/math/kelly_formula.md
 - Python:
-        - Python-matplotlib-折线图: content/plt_line.md
-        - Python-matplotlib-柱状图: content/plt_bar.md
-        - Python-matplotlib-饼图: content/plt_pie.md
-        - Python-f-string: content/py_f_string.md
-        - Python-打包并发布代码至 PyPI: content/py_setup.md
+        - Python-matplotlib-折线图: content/py/plt_line.md
+        - Python-matplotlib-柱状图: content/py/plt_bar.md
+        - Python-matplotlib-饼图: content/py/plt_pie.md
+        - Python-f-string: content/py/f_string.md
+        - Python-打包并发布代码至 PyPI: content/py/setup.md
 - Go:
-        - Go-socket: content/go_socket.md
-        - Go-tls: content/go_tls.md
-        - Go-socks-version-5: content/go_socks5.md
+        - Go-socket: content/go/socket.md
+        - Go-tls: content/go/tls.md
+        - Go-socks-version-5: content/go/socks5.md
+- Daze:
+        - 遗传算法-简单遗传算法: content/daze/ga/sga.md
+        - 遗传算法-最优保留策略: content/daze/ga/sga_optret.md
+        - 遗传算法-生物进化模拟: content/daze/ga/evolve.md
+        - Dlib-安装: content/daze/dlib/install.md
+        - Dlib-人脸检测: content/daze/dlib/face_detect.md
+        - Dlib-人脸标注: content/daze/dlib/face_landmark.md
+        - Dlib-人脸识别: content/daze/dlib/face_recognition.md
 - 沙箱:
         - Linux-常用软件安装与配置: content/os_install.md
         - Linux-ssr: content/os_ssr.md
@@ -85,3 +78,9 @@ pages:
         - RFC1928-socks5-中文翻译: content/net_rfc1928_socks5.md
         - AndrewNg-deeplearning-week1: content/dp_week1.md
         - AndrewNg-deeplearning-week2: content/dp_week2.md
+        - Math-霍夫曼编码: content/huffman.md
+        - Math-方差与标准差: content/variance_and_sd.md
+        - Math-正态分布: content/normal_distribution.md
+        - Math-凯利公式: content/kelly_formula.md
+        - HOG: content/hog.md
+        - Math-RC4: content/rc4.md

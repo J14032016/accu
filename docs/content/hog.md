@@ -54,7 +54,7 @@ ax2.set_title('Histogram of Oriented Gradients')
 plt.show()
 ```
 
-![img](/img/ml/hog/astronaut.png)
+![img](/img/hog/astronaut.png)
 
 # SVM
 

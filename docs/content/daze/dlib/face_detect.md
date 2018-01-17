@@ -35,8 +35,8 @@ python face_detector.py obama.jpg obama_face.jpg
 
 原图:
 
-![img](/img/ml/dlib/face_detect/obama.jpg)
+![img](/img/daze/dlib/face_detect/obama.jpg)
 
 人脸:
 
-![img](/img/ml/dlib/face_detect/obama_face.jpg)
+![img](/img/daze/dlib/face_detect/obama_face.jpg)

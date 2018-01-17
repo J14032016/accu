@@ -72,7 +72,7 @@ print('distance', d)
 
 拿两张女神的脸测试一下:
 
-![img](/img/ml/dlib/face_recognition/godness_d.png)
+![img](/img/daze/dlib/face_recognition/godness_d.png)
 
 结果是 `0.333517042672`, 是同一个人没错(长舒一口气).
 

@@ -43,4 +43,4 @@ bunzip2 shape_predictor_68_face_landmarks.dat.bz2
 python face_landmark_detection.py shape_predictor_68_face_landmarks.dat obama.jpg obama_landmark.jpg
 ```
 
-![img](/img/ml/dlib/face_landmark/obama_landmark.jpg)
+![img](/img/daze/dlib/face_landmark/obama_landmark.jpg)
