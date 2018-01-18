@@ -30,7 +30,7 @@ skimage.io.imsave(save_name, img)
 
 ```sh
 # 执行脚本
-python face_detector.py obama.jpg obama_face.jpg
+python3 face_detector.py obama.jpg obama_face.jpg
 ```
 
 原图:

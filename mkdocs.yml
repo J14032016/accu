@@ -69,6 +69,7 @@ pages:
         - Dlib-人脸检测: content/daze/dlib/face_detect.md
         - Dlib-人脸标注: content/daze/dlib/face_landmark.md
         - Dlib-人脸识别: content/daze/dlib/face_recognition.md
+        - Dlib-人脸聚类: content/daze/dlib/face_clustering.md
         - 加密算法-RC4-概览: content/daze/rc4/overview.md
         - 加密算法-RC4-优化: content/daze/rc4/optimize.md
 - 沙箱:

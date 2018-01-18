@@ -41,13 +41,13 @@ import numpy as np
 import skimage.draw
 import skimage.io
 
-predictor_path = sys.argv[1]
-face_rec_model_path = sys.argv[2]
-load_name_0 = sys.argv[3]
-load_name_1 = sys.argv[4]
+predictor_path = 'shape_predictor_68_face_landmarks.dat'
+face_rec_model_path = 'dlib_face_recognition_resnet_model_v1.dat'
+load_name_0 = sys.argv[1]
+load_name_1 = sys.argv[2]
 
 detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor(predictor_path)
+sp = dlib.shape_predictor(predictor_path)
 facerec = dlib.face_recognition_model_v1(face_rec_model_path)
 
 
@@ -55,7 +55,7 @@ def get_descriptor(load_name):
     img = skimage.io.imread(load_name)
     dets = detector(img, 1)
     assert len(dets) == 1
-    shape = shape_predictor(img, dets[0])
+    shape = sp(img, dets[0])
     face_descriptor = facerec.compute_face_descriptor(img, shape)
     face_descriptor = np.array(face_descriptor)
     assert face_descriptor.shape == (128,)
@@ -70,7 +70,7 @@ d = np.linalg.norm(x0 - x1)
 print('distance', d)
 ```
 
-拿两张女神的脸测试一下:
+拿两张神仙的脸测试一下:
 
 ![img](/img/daze/dlib/face_recognition/godness_d.png)
 

@@ -9,12 +9,12 @@ import dlib
 import skimage.draw
 import skimage.io
 
-predictor_path = sys.argv[1]
-load_name = sys.argv[2]
-save_name = sys.argv[3]
+predictor_path = 'shape_predictor_68_face_landmarks.dat'
+load_name = sys.argv[1]
+save_name = sys.argv[2]
 
 detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor(predictor_path)
+sp = dlib.shape_predictor(predictor_path)
 
 img = skimage.io.imread(load_name)
 dets = detector(img, 1)
@@ -27,7 +27,7 @@ for i, d in enumerate(dets):
     skimage.draw.set_color(img, skimage.draw.line(r1, c1, r1, c0), (255, 0, 0))
     skimage.draw.set_color(img, skimage.draw.line(r1, c0, r0, c0), (255, 0, 0))
 
-    shape = [(p.x, p.y) for p in shape_predictor(img, d).parts()]
+    shape = [(p.x, p.y) for p in sp(img, d).parts()]
     print('Part 0: {}, Part 1: {} ...'.format(shape[0], shape[1]))
     for i, pos in enumerate(shape):
         skimage.draw.set_color(img, skimage.draw.circle(pos[1], pos[0], 2), (0, 255, 0))
@@ -40,7 +40,7 @@ skimage.io.imsave(save_name, img)
 wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
 bunzip2 shape_predictor_68_face_landmarks.dat.bz2
 # 执行脚本, 保存结果至 obama_landmark.jpg
-python face_landmark_detection.py shape_predictor_68_face_landmarks.dat obama.jpg obama_landmark.jpg
+python3 face_landmark_detection.py obama.jpg obama_landmark.jpg
 ```
 
 ![img](/img/daze/dlib/face_landmark/obama_landmark.jpg)
