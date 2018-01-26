@@ -66,6 +66,7 @@ pages:
         - 遗传算法-简单遗传算法: content/daze/ga/sga.md
         - 遗传算法-最优保留策略: content/daze/ga/sga_optret.md
         - 遗传算法-生物进化模拟: content/daze/ga/evolve.md
+        - 遗传算法-愚弄神经网络: content/daze/ga/fooled_nn.md
         - Dlib-安装: content/daze/dlib/install.md
         - Dlib-人脸检测: content/daze/dlib/face_detect.md
         - Dlib-人脸标注: content/daze/dlib/face_landmark.md
