@@ -61,7 +61,8 @@ pages:
         - Go-socket: content/go/socket.md
         - Go-tls: content/go/tls.md
         - Go-socks-version-5: content/go/socks5.md
-        - Go-cross-compiling: content/go/cross_compiling.md
+        - Go-交叉编译: content/go/cross_compiling.md
+        - Go-时间尽头: content/go/end_of_time.md
 - Daze:
         - 遗传算法-简单遗传算法: content/daze/ga/sga.md
         - 遗传算法-最优保留策略: content/daze/ga/sga_optret.md
@@ -88,4 +89,3 @@ pages:
         - Math-正态分布: content/normal_distribution.md
         - Math-凯利公式: content/kelly_formula.md
         - HOG: content/hog.md
-        - 时间尽头: content/end_of_time.md
