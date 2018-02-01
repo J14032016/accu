@@ -10,7 +10,10 @@ def main():
     pattern = re.compile(r'((?<=href=")|((?<=src=")))(?P<src>.*?\.((jpg)|(png)|(gif)|(svg)|(bmp)|(css)|(js)))(?=")')
 
     def repl(x):
-        return 'http://cdn.accu.cc/{0}'.format(x.group('src').strip('./'))
+        src = x.group('src')
+        if src.startswith('http'):
+            return src
+        return 'http://cdn.accu.cc/{0}'.format(src.strip('./'))
 
     for entry in glob.glob('**/*.html', recursive=True):
         print(entry)

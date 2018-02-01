@@ -31,7 +31,7 @@
 <iframe src="/content/game_of_life/game_of_life.html" style="width:400px;height:450px" frameborder="no"></iframe>
 
 1. 点击棋盘棋格, 可以创建或销毁一个细胞.
-2. 点击"随机"按钮, 将以"原始汤"模式开始游戏. 该模式下细胞将以约定的概率随机出现在棋盘上.
+2. 点击"随机"按钮, 将以"原始汤"模式开始游戏. 该模式下细胞将以约定的概率随机初始化在棋盘上.
 
 # 参考
 - [1] 维基: 康威生命游戏 [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
