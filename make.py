@@ -15,7 +15,7 @@ def main():
             return src
         return 'http://cdn.accu.cc/{0}'.format(src.strip('./'))
 
-    for entry in glob.glob('**/*.html', recursive=True):
+    for entry in glob.glob('./site/**/*.html', recursive=True):
         print(entry)
         with open(entry, 'r+', encoding='utf-8') as f:
             content = f.read()
