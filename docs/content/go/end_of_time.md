@@ -61,5 +61,5 @@ end := time.Unix(int64(2<<31-1), 0)
 没错, 记得在 `2106-02-07 14:28:15 +0800 CST` 之前抛掉你手中的所有比特币(手动滑稽). 由于时间溢出引发的 BUG 最知名的应该是千年虫事件了, 虽然该事件已经过去, 但未来必定会再次发生, 有很大可能就是在 2106 年, 因为我们不知道除了比特币之外, 还有哪些软件也使用了 4 字节时间. 本次探索给我的教训是: **不要使用 uint32 保存时间**.
 
 # 参考
-- [字节序: https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F)
-- [千年虫: https://zh.wikipedia.org/zh-hans/2000%E5%B9%B4%E9%97%AE%E9%A2%98](https://zh.wikipedia.org/zh-hans/2000%E5%B9%B4%E9%97%AE%E9%A2%98)
+- [1] 维基: 字节序 [https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F)
+- [2] 维基: 千年虫 [https://zh.wikipedia.org/zh-hans/2000%E5%B9%B4%E9%97%AE%E9%A2%98](https://zh.wikipedia.org/zh-hans/2000%E5%B9%B4%E9%97%AE%E9%A2%98)

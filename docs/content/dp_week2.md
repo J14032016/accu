@@ -113,7 +113,7 @@ $$
 
 # 参考
 
-- 视频地址: [https://www.coursera.org/learn/neural-networks-deep-learning/home/week/2](https://www.coursera.org/learn/neural-networks-deep-learning/home/week/2)
-- 逻辑函数: [https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8](https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8)
-- 逻辑回归: [https://en.wikipedia.org/wiki/Logistic_regression](https://en.wikipedia.org/wiki/Logistic_regression)
-- 导数: [https://zh.wikipedia.org/wiki/%E5%AF%BC%E6%95%B0](https://zh.wikipedia.org/wiki/%E5%AF%BC%E6%95%B0)
+- [1] Andrew Ng: Neural Networks and Deep Learning [https://www.coursera.org/learn/neural-networks-deep-learning/home/week/2](https://www.coursera.org/learn/neural-networks-deep-learning/home/week/2)
+- [2] 维基: 逻辑函数 [https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8](https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8)
+- [3] 维基: 逻辑回归 [https://en.wikipedia.org/wiki/Logistic_regression](https://en.wikipedia.org/wiki/Logistic_regression)
+- [4] 维基: 导数 [https://zh.wikipedia.org/wiki/%E5%AF%BC%E6%95%B0](https://zh.wikipedia.org/wiki/%E5%AF%BC%E6%95%B0)

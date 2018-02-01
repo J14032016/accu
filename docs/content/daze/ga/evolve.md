@@ -179,4 +179,5 @@ for i, (pop, fit) in enumerate(ga.optret(ga.evolve)()):
 另外, 基于自然演化过程的算法除了在这里说到的遗传算法以外, 还有更广泛的群体遗传算法和遗传编程等, 它们能解决很多棘手的问题. 这也从一个侧面说明, 我们不一定需要一个智能才能得到一个构造精巧的系统.
 
 # 参考
-- [http://songshuhui.net/archives/10462](http://songshuhui.net/archives/10462)
+
+- [1] 方弦: 遗传算法: 内存中的进化 [http://songshuhui.net/archives/10462](http://songshuhui.net/archives/10462)

@@ -26,4 +26,4 @@ print(f'name: {name!r}')           # name: 'mohanson'
 
 # 参考
 
-官方文档: [https://www.python.org/dev/peps/pep-0498/](https://www.python.org/dev/peps/pep-0498/)
+- [1] Eric V.Smith: PEP 498 -- Literal String Interpolation [https://www.python.org/dev/peps/pep-0498/](https://www.python.org/dev/peps/pep-0498/)

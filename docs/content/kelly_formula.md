@@ -18,10 +18,6 @@ $$
 
 凯利公式最初为AT&T贝尔实验室物理学家约翰·拉里·凯利根据同僚克劳德·艾尔伍德·香农于长途电话线噪声上的研究所建立. 凯利说明香农的信息論要如何应用于一名拥有内线消息的赌徒在赌马时的问题. 赌徒希望决定最佳的赌金额, 而他的内线消息不需完美(无噪声), 即可让他拥有有用的优势. 凯利的公式随后被香农的另一名同僚爱德华·索普应用于二十一点和股票市场中.
 
-# 证明
-
-见维基百科.
-
 # 参考
 
-- [https://en.wikipedia.org/wiki/Kelly_criterion](https://en.wikipedia.org/wiki/Kelly_criterion)
+- [1] 维基: 凯利公式 [https://en.wikipedia.org/wiki/Kelly_criterion](https://en.wikipedia.org/wiki/Kelly_criterion)

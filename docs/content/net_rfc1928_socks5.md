@@ -114,5 +114,6 @@ VER | STATUS
     - 0x01 失败
 
 # 参考
-- RFC1928: [https://tools.ietf.org/html/rfc1928](https://tools.ietf.org/html/rfc1928)
-- Wiki: [https://zh.wikipedia.org/zh-hans/SOCKS](https://zh.wikipedia.org/zh-hans/SOCKS)
+
+- [1] Network Working Group: SOCKS Protocol Version 5 [https://tools.ietf.org/html/rfc1928](https://tools.ietf.org/html/rfc1928)
+- [2] 维基: SOCKS5 [https://zh.wikipedia.org/zh-hans/SOCKS](https://zh.wikipedia.org/zh-hans/SOCKS)

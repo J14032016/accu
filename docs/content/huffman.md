@@ -104,4 +104,4 @@ if __name__ == '__main__':
 
 # 参考
 
-[https://zh.wikipedia.org/zh/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81](https://zh.wikipedia.org/zh/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)
+- [1] 维基: 霍夫曼编码 [https://zh.wikipedia.org/zh/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81](https://zh.wikipedia.org/zh/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)

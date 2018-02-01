@@ -34,4 +34,4 @@ Image, Radar info | Position of other cars | Autonomous driving
 
 # 参考
 
-- 视频地址: [https://www.coursera.org/learn/neural-networks-deep-learning/home/week/1](https://www.coursera.org/learn/neural-networks-deep-learning/home/week/1)
+- [1] Andrew Ng: Neural Networks and Deep Learning [https://www.coursera.org/learn/neural-networks-deep-learning/home/week/1](https://www.coursera.org/learn/neural-networks-deep-learning/home/week/1)

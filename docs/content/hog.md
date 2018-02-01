@@ -76,6 +76,6 @@ print('predict of [0.7, 0.7]:', p)
 ```
 
 # 参考
-- [https://zh.wikipedia.org/zh-hans/%E6%96%B9%E5%90%91%E6%A2%AF%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE](https://zh.wikipedia.org/zh-hans/%E6%96%B9%E5%90%91%E6%A2%AF%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE)
-- [http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html](http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html)
-- [https://www.learnopencv.com/histogram-of-oriented-gradients/](https://www.learnopencv.com/histogram-of-oriented-gradients/)
+- [1] 维基: 方向梯度直方图 [https://zh.wikipedia.org/zh-hans/%E6%96%B9%E5%90%91%E6%A2%AF%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE](https://zh.wikipedia.org/zh-hans/%E6%96%B9%E5%90%91%E6%A2%AF%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE)
+- [2] scikit-image: Histogram of Oriented Gradients [http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html](http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html)
+- [3] Learn Opencv: Histogram of Oriented Gradients [https://www.learnopencv.com/histogram-of-oriented-gradients/](https://www.learnopencv.com/histogram-of-oriented-gradients/)

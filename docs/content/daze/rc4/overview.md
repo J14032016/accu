@@ -85,5 +85,5 @@ if __name__ == '__main__':
 ```
 
 # 参考
-- wiki: [https://en.wikipedia.org/wiki/RC4](https://en.wikipedia.org/wiki/RC4)
-- go 标准库: [https://github.com/golang/go/blob/master/src/crypto/rc4/rc4.go](https://github.com/golang/go/blob/master/src/crypto/rc4/rc4.go)
+- [1] 维基: RC4 [https://en.wikipedia.org/wiki/RC4](https://en.wikipedia.org/wiki/RC4)
+- [2] Go: crypto/rc4 标准库 [https://github.com/golang/go/blob/master/src/crypto/rc4/rc4.go](https://github.com/golang/go/blob/master/src/crypto/rc4/rc4.go)
