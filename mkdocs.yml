@@ -89,5 +89,4 @@ pages:
         - Math-正态分布: content/normal_distribution.md
         - Math-凯利公式: content/kelly_formula.md
         - HOG: content/hog.md
-        - 生命游戏-概览: content/game_of_life/overview.md
-        - 生命游戏-游乐场: content/game_of_life/playground.md
+        - 生命游戏: content/game_of_life/overview.md
