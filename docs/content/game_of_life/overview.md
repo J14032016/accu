@@ -26,13 +26,6 @@
 
 在游戏的进行中, 杂乱无序的细胞会逐渐演化出各种精致、有形的结构; 这些结构往往有很好的对称性, 而且每一代都在变化形状. 一些形状已经锁定, 不会逐代变化. 有时, 一些已经成形的结构会因为一些无序细胞的"入侵"而被破坏. 但是形状和秩序经常能从杂乱中产生出来.
 
-# 在线游戏
-
-<iframe src="/content/game_of_life/game_of_life.html" style="width:400px;height:450px" frameborder="no"></iframe>
-
-1. 点击棋盘棋格, 可以创建或销毁一个细胞.
-2. 点击"随机"按钮, 将以"原始汤"模式开始游戏. 该模式下细胞将以约定的概率随机初始化在棋盘上.
-
 # 参考
 - [1] 维基: 康威生命游戏 [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - [2] 维基: 细胞自动机 [https://zh.wikipedia.org/wiki/%E7%B4%B0%E8%83%9E%E8%87%AA%E5%8B%95%E6%A9%9F](https://zh.wikipedia.org/wiki/%E7%B4%B0%E8%83%9E%E8%87%AA%E5%8B%95%E6%A9%9F)

@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
 </head>
@@ -16,6 +17,7 @@
                             v-bind:fill="get((ix - 1), (iy - 1))?color.positive:color.negative" v-for="iy in y" v-on:click="set(ix-1, iy-1, 1 - get((ix - 1), (iy - 1)))"></rect>
                     </g>
                 </svg>
+                <hr/>
                 <div class="btn-toolbar" role="toolbar" aria-label="...">
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-default" v-bind:class="{'btn-primary': isRunning}" v-on:click="start">开始</button>
@@ -41,9 +43,9 @@
                 x: 20,
                 y: 20,
                 grid: {
-                    x: 15,
-                    y: 15,
-                    d: 3,
+                    x: 14,
+                    y: 14,
+                    d: 2,
                 },
                 color: {
                     positive: "#cf6fc1",
@@ -176,6 +178,11 @@
                 }
             }
         })
+
+        if (document.body.clientWidth < 640) {
+            cb.grid.x = (document.body.clientWidth - 30 - cb.grid.d * (cb.x + 1)) / cb.x
+            cb.grid.y = cb.grid.x
+        }
         cb.init()
         p = Math.random()
         if (p < 0.33) {
