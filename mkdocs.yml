@@ -51,19 +51,18 @@ pages:
         - PIL-ImageDraw: content/pil/pil_imagedraw.md
         - PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - PIL-ImageOps: content/pil/pil_imageops.md
-- Python:
+- 语言:
         - Python-matplotlib-折线图: content/py/plt_line.md
         - Python-matplotlib-柱状图: content/py/plt_bar.md
         - Python-matplotlib-饼图: content/py/plt_pie.md
         - Python-f-string: content/py/f_string.md
         - Python-打包并发布代码至 PyPI: content/py/setup.md
-- Go:
         - Go-socket: content/go/socket.md
         - Go-tls: content/go/tls.md
         - Go-socks-version-5: content/go/socks5.md
         - Go-交叉编译: content/go/cross_compiling.md
         - Go-时间尽头: content/go/end_of_time.md
-- Daze:
+- 算法:
         - 遗传算法-简单遗传算法: content/daze/ga/sga.md
         - 遗传算法-最优保留策略: content/daze/ga/sga_optret.md
         - 遗传算法-生物进化模拟: content/daze/ga/evolve.md
@@ -76,6 +75,8 @@ pages:
         - 加密算法-RC4-概览: content/daze/rc4/overview.md
         - 加密算法-RC4-优化: content/daze/rc4/optimize.md
         - 生命游戏: content/daze/game_of_life/overview.md
+- 系统:
+        - Linux-Supervisor: content/os/supervisor.md
 - 沙箱:
         - Linux-常用软件安装与配置: content/os_install.md
         - Linux-ssr: content/os_ssr.md
