@@ -45,7 +45,7 @@ python setup.py sdist upload
 
 **发布模块与文件**
 
-在 setup.py 中, 使用 `packages=['sample']` 会发布 sample 目录(包), 而使用 `py_modules=['sample']` 会发布 sample.py 文件.
+在 setup.py 中, 使用 `packages=['sample']` 会发布 sample 目录(包), 而使用 `py_modules=['sample']` 会发布 sample.py 文件. 大多数情况下, 你可以使用 `packages=setuptools.find_packages()` 自动发现代替手动填写.
 
 
 **生成命令行程序**
