@@ -1,6 +1,6 @@
 # RC4 性能测试
 
-在使用 python 版本 rc4 算法时发现性能较差, 几乎无法实时加解密和播放 youtube 视频, 因此对 rc4 算法做了一次性能测试, 测试对象是自己写的 rc4 和 go 标准库中的 rc4.
+在使用 python 版本 rc4 算法时发现性能较差, 几乎无法实时加解密播放 youtube 视频, 因此对 rc4 算法做了一次性能测试, 测试对象是自己写的 rc4 和 go 标准库中的 rc4.
 
 首先利用 `dd if=/dev/urandom of=/tmp/128m count=128 bs=1M` 生成一个 128M 的测试文件. 编写如下 python 和 go 两份代码:
 
