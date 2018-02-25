@@ -14,7 +14,7 @@ extra_javascript:
         - js/accu.js
 pages:
 - 主页: index.md
-- 数字图像处理:
+- 算法:
         - 数字图像处理-通道: content/pil/channel.md
         - 数字图像处理-均值: content/pil/mean.md
         - 数字图像处理-对比增强: content/pil/contrast.md
@@ -44,25 +44,6 @@ pages:
         - 数字图像处理-缩放-Lanczos算法: content/pil/resize_lanczos.md
         - 数字图像处理-区域生长算法: content/pil/rga.md
         - 数字图像处理-字符画: content/pil/ascii.md
-        - PIL-概览: content/pil/pil_tutorial_overview.md
-        - PIL-Image: content/pil/pil_image.md
-        - PIL-ImageChops: content/pil/pil_imagechops.md
-        - PIL-ImageColor: content/pil/pil_imagecolor.md
-        - PIL-ImageDraw: content/pil/pil_imagedraw.md
-        - PIL-ImageEnhance: content/pil/pil_imageenhance.md
-        - PIL-ImageOps: content/pil/pil_imageops.md
-- 语言:
-        - Python-matplotlib-折线图: content/py/plt_line.md
-        - Python-matplotlib-柱状图: content/py/plt_bar.md
-        - Python-matplotlib-饼图: content/py/plt_pie.md
-        - Python-f-string: content/py/f_string.md
-        - Python-打包并发布代码至 PyPI: content/py/setup.md
-        - Go-socket: content/go/socket.md
-        - Go-tls: content/go/tls.md
-        - Go-socks-version-5: content/go/socks5.md
-        - Go-交叉编译: content/go/cross_compiling.md
-        - Go-时间尽头: content/go/end_of_time.md
-- 算法:
         - 遗传算法-简单遗传算法: content/daze/ga/sga.md
         - 遗传算法-最优保留策略: content/daze/ga/sga_optret.md
         - 遗传算法-生物进化模拟: content/daze/ga/evolve.md
@@ -75,6 +56,24 @@ pages:
         - 加密算法-RC4-概览: content/daze/rc4/overview.md
         - 加密算法-RC4-优化: content/daze/rc4/optimize.md
         - 生命游戏: content/daze/game_of_life/overview.md
+- 语言:
+        - Python-PIL-概览: content/pil/pil_tutorial_overview.md
+        - Python-PIL-Image: content/pil/pil_image.md
+        - Python-PIL-ImageChops: content/pil/pil_imagechops.md
+        - Python-PIL-ImageColor: content/pil/pil_imagecolor.md
+        - Python-PIL-ImageDraw: content/pil/pil_imagedraw.md
+        - Python-PIL-ImageEnhance: content/pil/pil_imageenhance.md
+        - Python-PIL-ImageOps: content/pil/pil_imageops.md
+        - Python-matplotlib-折线图: content/py/plt_line.md
+        - Python-matplotlib-柱状图: content/py/plt_bar.md
+        - Python-matplotlib-饼图: content/py/plt_pie.md
+        - Python-f-string: content/py/f_string.md
+        - Python-打包并发布代码至 PyPI: content/py/setup.md
+        - Go-socket: content/go/socket.md
+        - Go-tls: content/go/tls.md
+        - Go-socks-version-5: content/go/socks5.md
+        - Go-交叉编译: content/go/cross_compiling.md
+        - Go-时间尽头: content/go/end_of_time.md
 - 系统:
         - Linux-Supervisor: content/os/supervisor.md
 - 沙箱:
