@@ -2,7 +2,7 @@
 
 本文灵感来自于上一篇[生物进化模拟](/content/daze/ga/evolve/). 神经网络当前已经能识别各种图像, 网络会给出一个范围为 0 至 1 的置信度(confidence) 表明它有多少把握认为这张图片属于某一分类. 通过将神经网络的置信度作为遗传算法的适应度, 可以很容易生成人眼无法辨认, 而神经网络却有 99.99% 的把握认为是某一分类的图像(例如, 将一张充满无意义噪点的图像以 99.99% 的置信度分类为狮子).
 
-在 2014 年已经有研究者研究该方面的知识, 论文地址是: [Deep Neural Networks are Easily Fooled:High Confidence Predictions for Unrecognizable Images](https://arxiv.org/pdf/1412.1897.pdf). 除了使用随机噪点愚弄神经网络之外, 文章中还研究了如何通过微调像素点, 得到一张标签为图书馆的狮子. 其实类似的研究还有很多, 比如 [All it takes to steal your face is a special pair of glasses](https://qz.com/1191083/hugh-masekelas-extraordinary-life-and-music/) 就实现了通过佩戴一副特殊眼睑, 让人脸识别系统将你误认为是他人.
+在 2014 年已经有研究者研究该方面的知识, 论文地址是: [Deep Neural Networks are Easily Fooled:High Confidence Predictions for Unrecognizable Images](https://arxiv.org/pdf/1412.1897.pdf). 除了使用随机噪点愚弄神经网络之外, 文章中还研究了如何通过微调像素点, 得到一张标签为图书馆的狮子. 其实类似的研究还有很多, 比如 [All it takes to steal your face is a special pair of glasses](https://qz.com/1191083/hugh-masekelas-extraordinary-life-and-music/) 就实现了通过佩戴一副特殊眼镜, 让人脸识别系统将你误认为是他人.
 
 本文目的是愚弄一个手写数字识别网络.
 
@@ -53,7 +53,7 @@ print(r)
 
 # 开始调戏
 
-代码和前几章基本一样, 唯一不同是使用神经网络作为遗传算法的适应度计算函数. 下示算法会初始化 80 张 28*28 的图片, 边将数据传入神经网络计算每张图片在某个数字上的得分, 如果在某一轮, 群体中最优秀的个体得分超过 0.99, 则结束进化, 并保存该最优群体.
+代码和前几章基本一样, 唯一不同是使用神经网络作为遗传算法的适应度计算函数. 下示算法会初始化 80 张 28*28 的图片, 边将数据传入神经网络计算每张图片在某个数字上的得分, 如果在某一轮, 群体中最优秀的个体得分超过 0.99, 则结束进化, 并保存该最优个体.
 
 ```py
 import os
