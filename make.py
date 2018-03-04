@@ -3,6 +3,10 @@ import re
 import subprocess
 
 
+def test():
+    subprocess.call('mkdocs serve --dirtyreload', shell=True)
+
+
 def main():
     subprocess.call('git pull origin master', shell=True)
     subprocess.call('mkdocs build', shell=True)
