@@ -68,6 +68,7 @@ pages:
         - Python-PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - Python-PIL-ImageOps: content/pil/pil_imageops.md
         - Python-matplotlib-折线图: content/py/plt_line.md
+        - Python-matplotlib-散点图: content/py/plt_scatter.md
         - Python-matplotlib-柱状图: content/py/plt_bar.md
         - Python-matplotlib-饼图: content/py/plt_pie.md
         - Python-f-string: content/py/f_string.md
