@@ -13,7 +13,7 @@ ax.pie(X, labels=labels, autopct='%1.1f%%', startangle=90)
 plt.show()
 ```
 
-![img](/img/py/plt_pie/pie-1.png)
+![img](/img/py/plt/pie/pie-1.png)
 
 # 正圆
 
@@ -32,7 +32,7 @@ ax.axis('equal')
 plt.show()
 ```
 
-![img](/img/py/plt_pie/pie-2.png)
+![img](/img/py/plt/pie/pie-2.png)
 
 # 强调
 
@@ -52,4 +52,4 @@ ax.axis('equal')
 plt.show()
 ```
 
-![img](/img/py/plt_pie/pie-3.png)
+![img](/img/py/plt/pie/pie-3.png)

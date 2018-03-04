@@ -16,7 +16,7 @@ ax.scatter(x, y, s=50, c='#FF0000', alpha=0.5)
 plt.show()
 ```
 
-![img](/img/py/plt_scatter/sample.png)
+![img](/img/py/plt/scatter/sample.png)
 
 # 样式
 
@@ -34,4 +34,4 @@ ax.scatter(x, y, s=50, c='#FF0000', marker='+', alpha=0.5)
 plt.show()
 ```
 
-![img](/img/py/plt_scatter/sample_mark.png)
+![img](/img/py/plt/scatter/sample_mark.png)
