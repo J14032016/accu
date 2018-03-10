@@ -41,7 +41,7 @@ print('Mean squared error: %.2f' % sklearn.metrics.mean_squared_error(y, y_pred)
 print('Variance score: %.2f' % sklearn.metrics.r2_score(y, y_pred))
 ```
 
-```
+```r
 Coefficients: [ 1.55978657  0.58092437  0.10491954 -0.0957913 ]
 Mean squared error: 3.40
 Variance score: 0.98
