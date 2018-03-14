@@ -60,4 +60,4 @@ Variance score: 0.47
 
 # 参考
 - [1] 维基: 最小二乘法 [https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95](https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95)
-- [2] 于淼: 最小二乘法?为神马不是差的绝对值 [http://blog.sciencenet.cn/blog-430956-621997.html]啦(http://blog.sciencenet.cn/blog-430956-621997.html)
+- [2] 于淼: 最小二乘法?为神马不是差的绝对值 [http://blog.sciencenet.cn/blog-430956-621997.html](http://blog.sciencenet.cn/blog-430956-621997.html)
