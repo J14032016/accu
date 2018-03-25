@@ -156,6 +156,48 @@ Variance score: 0.47
 
 ![img](/img/daze/sklearn/liner_model/linear_regression/sample.png)
 
+要注意的是, 线性回归的结果并不一定是一条**线**. 比如试图回归有两个特征点和一个输出标签的数据时, 其回归结果为一个二维面.
+
+```py
+import matplotlib.pyplot as plt
+import sklearn.datasets
+import sklearn.linear_model
+import sklearn.metrics
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+diabetes = sklearn.datasets.load_diabetes()
+diabetes_x = diabetes.data[:, 2:4]
+diabetes_y = diabetes.target
+
+regr = sklearn.linear_model.Ridge()
+regr.fit(diabetes_x, diabetes_y)
+print(f'w={regr.coef_}, b={regr.intercept_}')
+
+diabetes_y_pred = regr.predict(diabetes_x)
+print('Coefficients:', regr.coef_)
+print('Mean squared error: %.2f' % sklearn.metrics.mean_squared_error(diabetes_y, diabetes_y_pred))
+print('Variance score: %.2f' % sklearn.metrics.r2_score(diabetes_y, diabetes_y_pred))
+
+plt.style.use('seaborn')
+axes = plt.subplot(projection='3d')
+axes.scatter(diabetes_x[:, 0], diabetes_x[:, 1], diabetes_y, s=50, c='#FF0000', alpha=0.5)
+axes.set_zlabel('Z')
+axes.set_ylabel('Y')
+axes.set_xlabel('X')
+
+surface_x = np.linspace(-0.2, 0.2, 50)
+surface_y = np.linspace(-0.2, 0.2, 50)
+surface_x, surface_y = np.meshgrid(surface_x, surface_y)
+surface_z = regr.predict(np.stack([surface_x.flatten(), surface_y.flatten()], axis=1))
+surface_z = surface_z.reshape((50, 50))
+axes.plot_surface(surface_x, surface_y, surface_z, rstride=1, cstride=1, cmap=plt.cm.coolwarm)
+plt.show()
+```
+
+![img](/img/upyun_shared/lr_3d.png)
+
+
 # 逻辑回归
 
 考虑到线性回归 $$f(x, w) = w^Tx + b$$ 是在 $$[-oo, +oo]$$ 上连续的, 不符合概率的取值范围 0 ~ 1, 因此我们考虑使用广义线性模型, 最理想的是单位阶跃函数:
