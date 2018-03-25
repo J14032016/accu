@@ -31,6 +31,8 @@
 8. 逻辑回归的导数计算
 9. 开始写代码
 
+<iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:525px; height:245px;" src="https://www.processon.com/embed/5ab761f9e4b018c271c58cd6"></iframe>
+
 # 什么是数字图像
 
 **数字图像的本质是一个多维矩阵**.
