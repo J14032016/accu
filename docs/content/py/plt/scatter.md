@@ -35,3 +35,28 @@ plt.show()
 ```
 
 ![img](/img/py/plt/scatter/sample_mark.png)
+
+# 三维坐标
+
+```py
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+plt.style.use('seaborn')
+
+ax = plt.subplot(projection='3d')
+
+x = np.linspace(-np.pi, np.pi, 16)
+y = np.sin(x)
+z = np.linspace(-np.pi, np.pi, 16)
+
+ax.scatter(x, y, z, s=50, c='#FF0000', alpha=0.5)
+
+ax.set_zlabel('Z')
+ax.set_ylabel('Y')
+ax.set_xlabel('X')
+plt.show()
+```
+
+![img](/img/py/plt/scatter/3d.png)
