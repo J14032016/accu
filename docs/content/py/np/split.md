@@ -18,7 +18,7 @@ r = np.split(im, 2, axis=1)
 im = np.concatenate(r, axis=1)
 ```
 
-![img](/img/py/np/split/split_v2.png)
+![img](/img/py/np/split/splits.png)
 
 ```py
 # 横向分割为相等两份
@@ -27,16 +27,10 @@ r = np.split(im, 2, axis=0)
 im = np.concatenate(r, axis=0)
 ```
 
-![img](/img/py/np/split/split_h2.png)
-
-还可以进行不均等分割
-
 ```py
 # 纵向分割为 0-50, 50-430, 430-480 三部分
 r = np.split(im, [50, 430], axis=1)
 ```
-
-![img](/img/py/np/split/split_v3.png)
 
 # 通道分割与合并
 
@@ -57,4 +51,22 @@ a = np.squeeze(splits[3], 2)
 
 # 使用 stack 重建原始图像
 im = np.stack((r, g, b, a), axis=2)
+
+# 美美哒展示出来
+import matplotlib.pyplot as plt
+plt.style.use('seaborn')
+
+_, axes = plt.subplots(2, 2)
+axes[0][0].imshow(im)
+axes[0][0].axis('off')
+axes[0][1].imshow(r, cmap='Reds')
+axes[0][1].axis('off')
+axes[1][0].imshow(g, cmap='Greens')
+axes[1][0].axis('off')
+axes[1][1].imshow(b, cmap='Blues')
+axes[1][1].axis('off')
+
+plt.show()
 ```
+
+![img](/img/py/np/split/channels.png)
