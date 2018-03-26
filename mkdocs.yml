@@ -69,6 +69,7 @@ pages:
         - Python-PIL-ImageDraw: content/pil/pil_imagedraw.md
         - Python-PIL-ImageEnhance: content/pil/pil_imageenhance.md
         - Python-PIL-ImageOps: content/pil/pil_imageops.md
+        - Python-np-分割与合并: content/py/np/split.md
         - Python-matplotlib-折线图: content/py/plt/line.md
         - Python-matplotlib-散点图: content/py/plt/scatter.md
         - Python-matplotlib-柱状图: content/py/plt/bar.md
