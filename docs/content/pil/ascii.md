@@ -1,4 +1,4 @@
-# 成果展示
+# 效果展示
 
 ![img](/img/pil/ascii/jp.jpg)
 ![img](/img/pil/ascii/jp_ascii.jpg)
@@ -99,7 +99,7 @@ im = PIL.Image.open('/img/jp.jpg')
 im = im.convert('F')
 size = im.size
 
-rx = int(im.size[0] / 2)
+rx = im.size[0]
 ry = int(rx / size[0] * size[1] * 8 / 14)
 im = im.resize((rx, ry), PIL.Image.NEAREST)
 
@@ -129,8 +129,4 @@ dr = PIL.ImageDraw.Draw(im)
 dr.text((0, 0), ''.join(words), '#000000', font)
 im = im.resize(size, PIL.Image.LANCZOS)
 im.show()
-```
-
-```
-[1] im.show 方法无法在非图形界面操作系统下使用; 作为替代方案, 可以使用 im.save('/tmp/out.jpg').
 ```

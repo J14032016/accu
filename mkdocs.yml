@@ -39,7 +39,6 @@ pages:
         - 数字图像处理-缩放-最近邻插值法: content/pil/resize_nearst.md
         - 数字图像处理-缩放-最近邻插值法的幽灵事件: content/pil/resize_nearst_ghost.md
         - 数字图像处理-缩放-双线性算法: content/pil/resize_bilinear.md
-        - 数字图像处理-缩放-盒取样法: content/pil/resize_box.md
         - 数字图像处理-缩放-双三次插值法: content/pil/resize_bicubic.md
         - 数字图像处理-缩放-Lanczos算法: content/pil/resize_lanczos.md
         - 数字图像处理-区域生长算法: content/pil/rga.md

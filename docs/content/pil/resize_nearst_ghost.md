@@ -12,7 +12,7 @@ im = im.resize((im.size[0] // 2, im.size[1] // 2), PIL.Image.NEAREST)
 im.show()
 ```
 
-缩放 1/2 后的图片如下:
+长宽均缩放 1/2 后的图片如下:
 
 ![img](/img/pil/resize_nearst_ghost/jp_ghost_resized.jpg)
 
@@ -25,3 +25,20 @@ im.show()
 将原图放大, 观察到如下结构, 可以看到大量规则排列的 (99, 97, 101) 像素点覆盖了整个原图. 当缩放至 1/2 时, 这些像素点被取出并组合成了新的图像. 其中 (99, 97, 101) 是原图的[图像均值](/content/pil/mean/).
 
 ![img](/img/pil/resize_nearst_ghost/jp_ghost_stats.jpg)
+
+注: 生成幽灵图片的代码如下:
+
+```py
+import PIL.Image
+import PIL.ImageStat
+
+im = PIL.Image.open('/img/jp.jpg')
+mean = PIL.ImageStat.Stat(im).mean
+mean = tuple(int(e) for e in mean)
+
+for x in range(im.size[0] // 2):
+    for y in range(im.size[1] // 2):
+        im.putpixel((2 * x + 1, 2 * y + 1), mean)
+
+im.show()
+```
