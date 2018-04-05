@@ -1,4 +1,4 @@
-Mohanson's Blog: [accu.cc](http://accu.cc)
+Mohanson's Blog [http://accu.cc](http://accu.cc)
 
 ```sh
 $ pip install mkdocs
