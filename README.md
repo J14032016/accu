@@ -1,7 +1,7 @@
 Mohanson's Blog [http://accu.cc](http://accu.cc)
 
 ```sh
-$ pip install mkdocs
+$ pip install mkdocs asciimathml
 $ mkdocs server
 ```
 
