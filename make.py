@@ -4,7 +4,7 @@ import subprocess
 
 
 def test():
-    subprocess.call('mkdocs serve --dirtyreload', shell=True)
+    subprocess.call('mkdocs serve --dirtyreload -f mkdocs-dev.yml', shell=True)
 
 
 def main():

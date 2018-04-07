@@ -96,7 +96,22 @@ $$
 
 因此特征 A 的信息增益为 $$H(D) - H(D|A) = 0.81 - 0.5 = 0.31$$
 
+# 决策树生成
+
+基本的决策树的生成算法中, 典型的有 ID3 生成算法和 C4.5 生成算法, 它们生成树的过程大致相似. ID3 是采用的信息增益作为特征选择的度量, 而 C4.5 则采用信息增益比.
+
+ID3 生成算法的步骤如下:
+
+1. 使用所有没有使用的属性并计算与之相关的信息增益
+2. 选取其中信息增益最大的属性
+3. 生成包含该属性的节点
+
+# 实战
+
+`sklearn` 中有两类决策树, 它们均采用优化的 CART 决策树生成算法. CART(分类回归树)是一棵二叉树, 且每个非叶子节点都有两个孩子, 所以对于第一棵子树其叶子节点数比非叶子节点数多1. <del>我靠, 我已经写不动了.</del> 看一下在 sklearn 中应用决策树的实例:
+
 # 参考
 
 - [1] sklearn: 决策树 [http://sklearn.apachecn.org/cn/0.19.0/modules/tree.html](http://sklearn.apachecn.org/cn/0.19.0/modules/tree.html)
 - [2] 华校专/王正林: Python大战机器学习.第二章.决策树
+- [3] wiki: ID3 algorithm [https://en.wikipedia.org/wiki/ID3_algorithm](https://en.wikipedia.org/wiki/ID3_algorithm)
