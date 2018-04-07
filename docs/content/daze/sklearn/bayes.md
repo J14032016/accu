@@ -16,9 +16,9 @@ acc = sklearn.metrics.classification_report(iris.target, y_pred)
 print(acc)
 ```
 
-# partial_fit 递增式学习
+# partial_fit
 
-如果训练集数据过大, 无法一次性读入内存, 贝叶斯分类器提供了 `partial_fit` 函数, 以进行动态数据加载, 用与递增式学习. 要注意的是, 第一次调用 `partial_fit` 需要将 classes 全部传入.
+如果训练集数据过大, 无法一次性读入内存, 贝叶斯分类器提供了 `partial_fit` 函数, 以进行动态数据加载, 用与递增式学习. 要注意的是, 第一次调用 `partial_fit` 时需要将 classes 全部传入.
 
 ```py
 import numpy as np
