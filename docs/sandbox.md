@@ -98,7 +98,7 @@ $$
 
 # 决策树生成
 
-基本的决策树的生成算法中, 典型的有 ID3 生成算法和 C4.5 生成算法, 它们生成树的过程大致相似. ID3 是采用的信息增益作为特征选择的度量, 而 C4.5 则采用信息增益比.
+基本的决策树的生成算法中, 典型的有 ID3, C4.5 和 CART 生成算法, 它们生成树的过程大致相似. ID3 是采用的信息增益作为特征选择的度量, 而 C4.5 则采用信息增益比, CART 与 C4.5 非常相似, 但它不同之处在于它支持数值目标变量(回归), 并且不计算规则集.
 
 ID3 生成算法的步骤如下:
 
@@ -108,7 +108,94 @@ ID3 生成算法的步骤如下:
 
 # 实战
 
-`sklearn` 中有两类决策树, 它们均采用优化的 CART 决策树生成算法. CART(分类回归树)是一棵二叉树, 且每个非叶子节点都有两个孩子, 所以对于第一棵子树其叶子节点数比非叶子节点数多1. <del>我靠, 我已经写不动了.</del> 看一下在 sklearn 中应用决策树的实例:
+`sklearn` 中有两类决策树, 它们均采用优化的 CART 决策树生成算法. CART(分类回归树)是一棵二叉树, 且每个非叶子节点都有两个孩子, 所以对于第一棵子树其叶子节点数比非叶子节点数多1. <del>我靠, 我已经写不动了.</del>
+
+`sklearn` 中有两类决策数, 分别是 `DecisionTreeClassifier` 和 `DecisionTreeRegressor`, 分别用与解决分类和回归问题. 首先看一下应用 `DecisionTreeClassifier` 解决 iris 数据集**分类**:
+
+```py
+import sklearn.datasets
+import sklearn.metrics
+import sklearn.model_selection
+import sklearn.tree
+
+iris = sklearn.datasets.load_iris()
+
+x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(
+    iris.data, iris.target, test_size=0.25, random_state=0, stratify=iris.target)
+
+clf = sklearn.tree.DecisionTreeClassifier()
+clf.fit(x_train, y_train)
+
+y_pred = clf.predict(x_test)  # 预测样本分类, 也可以使用 predict_proba 预测每个类的概率
+acc = sklearn.metrics.classification_report(y_test, y_pred)
+print(acc)
+```
+
+```
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00        13
+          1       0.93      1.00      0.96        13
+          2       1.00      0.92      0.96        12
+
+avg / total       0.98      0.97      0.97        38
+```
+
+`DecisionTreeClassifier` 包含一系列可配置的参数, 详细参见: [http://sklearn.apachecn.org/cn/0.19.0/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier](http://sklearn.apachecn.org/cn/0.19.0/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier)
+
+使用 `DecisionTreeRegressor` 解决**回归**问题. 下例回归一个带有随机噪声的正弦波:
+
+```py
+import matplotlib.pyplot as plt
+import numpy as np
+import sklearn.tree
+
+rng = np.random.RandomState(1)
+x = np.sort(5 * rng.rand(80, 1), axis=0)
+y = np.sin(x).ravel()
+y[::5] += 3 * (0.5 - rng.rand(16))
+
+# 使用 min_samples_leaf=5 控制叶节点的样本数量, 防止过拟合.
+# 这个值很小时意味着生成的决策树将会过拟合，然而当这个值很大
+# 时将会不利于决策树的对样本的学习. 所以尝试 min_samples_leaf=5 作为初始值.
+regr = sklearn.tree.DecisionTreeRegressor(max_depth=5, min_samples_leaf=5)
+regr.fit(x, y)
+
+x_test = np.arange(0.0, 5.0, 0.01)[:, np.newaxis]
+y_test = np.sin(x_test).ravel()
+y_pred = regr.predict(x_test)
+
+print('Training score:', regr.score(x, y))
+print('Testing score:', regr.score(x_test, y_test))
+
+plt.figure()
+plt.scatter(x, y, s=20, edgecolor='black', c='darkorange', label='data')
+plt.plot(x_test, y_pred, color='cornflowerblue', label='max_depth=5', linewidth=2)
+plt.xlabel('data')
+plt.ylabel('target')
+plt.title('Decision Tree Regression')
+plt.legend()
+plt.show()
+```
+
+```
+Training score: 0.8062057896011524
+Testing score: 0.9328689437179793
+```
+
+![img](/img/daze/sklearn/tree/regr.png)
+
+# 可视化
+
+经过训练, 我们可以使用 `export_graphviz` 导出器以 Graphviz 格式导出决策树. 以 iris 数据集分类为例:
+
+```py
+sklearn.tree.export_graphviz(clf, '/tmp/clf.graphviz')
+```
+
+然后使用 `dot -Tpng clf.phz -o /tmp/clf.png` 获得 png 格式的可视化图片(需要安装 graphviz 软件).
+
+![img](/img/daze/sklearn/tree/clf.png)
 
 # 参考
 
