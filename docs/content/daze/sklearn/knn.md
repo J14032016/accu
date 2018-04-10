@@ -76,7 +76,9 @@ print(acc)
 avg / total       0.97      0.97      0.97       450
 ```
 
-原始 kNN 实现的搜索方式简单粗暴: 线性扫描. 通过计算输入样本与每个训练样本的距离, 找到距离最近的 k 个点. 当训练数据较大时, 非常耗费时间. sklean 中实现了三种方式来优化搜索过程, 分别是 `BallTree`, `KDTree`, `brute-force`. 使用 sklearn 提供的代码使用过程如下:
+原始 kNN 实现的搜索方式简单粗暴: 线性扫描. 通过计算输入样本与每个训练样本的距离, 找到距离最近的 k 个点. 当训练数据较大时, 非常耗费时间. sklean 中实现了三种搜索方式, 分别是 `BallTree`, `KDTree`, `brute-force`. `KDTree` 是一颗二叉树, `BallTree` 是 `KDTree` 的优化版本, 而 `brute-force` 就是原始的暴力线性扫描. 这里要着重说明的是, `KDTree` 与 `BallTree` 虽然优化了搜索速度, 但牺牲了精确度. 因此对于小数据集(如 n < 30), 使用 `brute-force` 仍然是一个最佳选择.
+
+使用 sklearn 提供的代码使用过程如下:
 
 ```py
 import sklearn.datasets
