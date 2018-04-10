@@ -7,6 +7,10 @@ def test():
     subprocess.call('mkdocs serve --dirtyreload -f mkdocs-dev.yml', shell=True)
 
 
+def show():
+    subprocess.call('mkdocs serve --dirtyreload', shell=True)
+
+
 def main():
     subprocess.call('git pull origin master', shell=True)
     subprocess.call('mkdocs build', shell=True)
