@@ -61,6 +61,7 @@ pages:
         - sklearn-决策树: content/daze/sklearn/tree.md
         - sklearn-贝叶斯分类器: content/daze/sklearn/bayes.md
         - sklearn-kNN: content/daze/sklearn/knn.md
+        - skleadn-聚类: content/daze/sklearn/cluster.md
 - 语言:
         - Python-PIL-概览: content/pil/pil_tutorial_overview.md
         - Python-PIL-Image: content/pil/pil_image.md
