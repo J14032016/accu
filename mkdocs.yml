@@ -63,6 +63,7 @@ pages:
         - sklearn-kNN: content/daze/sklearn/knn.md
         - sklearn-聚类: content/daze/sklearn/cluster.md
         - sklearn-SVM: content/daze/sklearn/svm.md
+        - sklearn-流形学习: content/daze/sklearn/manifold.md
 - 语言:
         - Python-PIL-概览: content/pil/pil_tutorial_overview.md
         - Python-PIL-Image: content/pil/pil_image.md
